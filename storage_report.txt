@@ -1,0 +1,18 @@
+Linux Storage Report - Sat Jun  7 01:04:10 AM EDT 2025
+======================================
+
+1. Mounted Local Disk Filesystems (Device Names & Mount Points):
+Filesystem     Type     Size  Used Avail Use% Mounted on
+/dev/sda2      ext4      40G   11G   27G  29% /
+/dev/sr0       iso9660  6.0G  6.0G     0 100% /media/michael/Ubuntu 24.04.2 LTS amd64
+
+2. Mounted Network Filesystems (NFS, CIFS, SMB):
+No network filesystems are currently mounted.
+
+3. Free Space in Filesystem Holding Home Directory (~):
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda2        40G   11G   27G  29% /
+
+4. Space Used and Number of Files in Home Directory (~):
+218M	/home/michael
+Number of files: 5091

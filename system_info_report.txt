@@ -1,0 +1,221 @@
+Gathering system hardware information...
+=========================================
+
+1. Network Interface Names
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: ens33: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 00:0c:29:10:c8:43 brd ff:ff:ff:ff:ff:ff
+    altname enp2s1
+
+2. Processor Model Name, Cores, and Speed
+CPU(s):                               2
+On-line CPU(s) list:                  0,1
+Model name:                           Intel(R) Core(TM) i5-10400H CPU @ 2.60GHz
+BIOS Model name:                      Intel(R) Core(TM) i5-10400H CPU @ 2.60GHz  CPU @ 2.6GHz
+Thread(s) per core:                   1
+Core(s) per socket:                   1
+Socket(s):                            2
+NUMA node0 CPU(s):                    0,1
+
+3. Memory Size with Manufacturer Information
+	Maximum Memory Module Size: 32768 MB
+	Maximum Total Memory Size: 491520 MB
+	Current Speed: Unknown
+	Installed Size: 4096 MB (Single-bank Connection)
+	Enabled Size: 4096 MB (Single-bank Connection)
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Current Speed: Unknown
+	Installed Size: Not Installed
+	Enabled Size: Not Installed
+	Size: 4 GB
+	Speed: Unknown
+	Manufacturer: Not Specified
+	Part Number: Not Specified
+	Configured Memory Speed: Unknown
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+	Size: No Module Installed
+
+4. Disk Drive Device Names and Model Names
+NAME   MODEL                            SIZE
+loop0                                  73.9M
+loop1                                  73.9M
+loop2                                     4K
+loop3                                 245.5M
+loop4                                 241.9M
+loop5                                  11.1M
+loop6                                  91.7M
+loop7                                   516M
+loop8                                  10.8M
+loop9                                  10.8M
+loop10                                 50.9M
+loop11                                 44.4M
+loop12                                  568K
+sda    VMware Virtual S                  40G
+sr0    VMware Virtual SATA CDRW Drive   5.9G
+
+5. Video Card Model Name
+00:0f.0 VGA compatible controller: VMware SVGA II Adapter
