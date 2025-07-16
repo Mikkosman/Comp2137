@@ -105,3 +105,33 @@ sed -i '/\sserver1$/d' /etc/hosts
 echo "192.168.16.21 server1" >> /etc/hosts
 
 echo "/etc/hosts updated successfully."
+echo "Installing apache2 and squid..."
+
+# Update package list
+apt update -y
+
+# Install apache2 if not already installed
+if ! dpkg -l | grep -qw apache2; then
+    echo "Installing apache2..."
+    apt install -y apache2
+else
+    echo "apache2 is already installed."
+fi
+
+# Install squid if not already installed
+if ! dpkg -l | grep -qw squid; then
+    echo "Installing squid..."
+    apt install -y squid
+else
+    echo "squid is already installed."
+fi
+
+# Enable and start services
+systemctl enable apache2 --now
+systemctl enable squid --now
+
+# Check service status
+echo ""
+echo "Service Status:"
+systemctl is-active apache2 && echo "✔ apache2 is running." || echo "❌ apache2 failed to start."
+systemctl is-active squid && echo "✔ squid is running." || echo "❌ squid failed to start."
