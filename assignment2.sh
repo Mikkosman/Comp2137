@@ -64,3 +64,44 @@ for user in "${user_list[@]}"; do
 done
 
 echo "SSH key configuration completed."
+echo "Configuring Netplan network settings..."
+
+# Set target IP and interface name
+TARGET_IP="192.168.16.21/24"
+NETPLAN_FILE=$(find /etc/netplan -name '*.yaml' | head -n 1)
+
+# Get interface connected to 192.168.16 network
+TARGET_IF=$(ip -o -4 addr show | awk '/192\.168\.16/ {print $2; exit}')
+
+if [ -z "$TARGET_IF" ]; then
+    echo "Error: Could not detect the correct interface for 192.168.16"
+    exit 1
+fi
+
+# Backup original netplan file
+cp "$NETPLAN_FILE" "${NETPLAN_FILE}.bak"
+
+# Write new netplan config (excluding mgmt interface)
+cat > "$NETPLAN_FILE" <<EOF
+network:
+  version: 2
+  ethernets:
+    $TARGET_IF:
+      dhcp4: no
+      addresses: [$TARGET_IP]
+      gateway4: 192.168.16.2
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
+EOF
+
+# Apply Netplan changes
+netplan apply && echo "Netplan applied successfully." || echo "Netplan failed."
+echo "Updating /etc/hosts..."
+
+# Remove any outdated entries for server1
+sed -i '/\sserver1$/d' /etc/hosts
+
+# Add new correct mapping
+echo "192.168.16.21 server1" >> /etc/hosts
+
+echo "/etc/hosts updated successfully."
