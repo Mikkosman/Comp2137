@@ -57,3 +57,43 @@ if [[ -n "$DESIRED_NAME" ]]; then
     fi
   fi
 fi
+if [[ -n "$DESIRED_IP" ]]; then
+  NETPLAN_FILE=$(find /etc/netplan -name "*.yaml" | head -n 1)
+  LAN_IFACE=$(ip -o -4 addr show | awk '/192\.168\.16\./ {print $2; exit}')
+  CURRENT_IP=$(ip -o -4 addr show dev "$LAN_IFACE" | awk '{print $4}' | cut -d/ -f1)
+
+  if [[ "$CURRENT_IP" != "$DESIRED_IP" ]]; then
+    # Backup the netplan config
+    cp "$NETPLAN_FILE" "$NETPLAN_FILE.bak"
+
+    # Rewrite the netplan config
+    cat > "$NETPLAN_FILE" <<EOF
+network:
+  version: 2
+  ethernets:
+    $LAN_IFACE:
+      dhcp4: no
+      addresses: [$DESIRED_IP/24]
+      gateway4: 192.168.16.2
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]
+EOF
+
+    # Apply netplan changes
+    netplan apply
+
+    # Update /etc/hosts
+    sed -i "/\s$(hostname)$/d" /etc/hosts
+    echo "$DESIRED_IP $(hostname)" >> /etc/hosts
+
+    logger "IP address changed from $CURRENT_IP to $DESIRED_IP on $LAN_IFACE"
+
+    if $VERBOSE; then
+      echo "IP address changed from $CURRENT_IP to $DESIRED_IP on $LAN_IFACE"
+    fi
+  else
+    if $VERBOSE; then
+      echo "IP address already set to $DESIRED_IP"
+    fi
+  fi
+fi
