@@ -97,3 +97,23 @@ EOF
     fi
   fi
 fi
+if [[ -n "$HOSTENTRY_NAME" && -n "$HOSTENTRY_IP" ]]; then
+  # Check if the entry already exists with correct IP
+  if grep -qE "^$HOSTENTRY_IP\s+$HOSTENTRY_NAME\$" /etc/hosts; then
+    if $VERBOSE; then
+      echo "/etc/hosts already contains: $HOSTENTRY_IP $HOSTENTRY_NAME"
+    fi
+  else
+    # Remove any existing lines for this hostname
+    sed -i "/\s$HOSTENTRY_NAME$/d" /etc/hosts
+
+    # Add new correct entry
+    echo "$HOSTENTRY_IP $HOSTENTRY_NAME" >> /etc/hosts
+
+    logger "/etc/hosts updated: $HOSTENTRY_NAME set to $HOSTENTRY_IP"
+
+    if $VERBOSE; then
+      echo "/etc/hosts updated: $HOSTENTRY_NAME set to $HOSTENTRY_IP"
+    fi
+  fi
+fi
